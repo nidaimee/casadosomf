@@ -1,7 +1,7 @@
 = simple_form_for(['admin', @item]) do |f|
   header.content-header.js-content-header
   == render 'fae/shared/form_header', header: @klass_name
-  == render 'fae/shared/errors'
+    == render 'fae/shared/errors'
 
   main.content
     #products.cocoon
@@ -10,11 +10,10 @@
         = render 'sell_product_fields', f: product
       .links
         = link_to_add_association 'Adicionar produto', f, :sell_products
-
-
-    = fae_association f, :services
-    = fae_association f, :discount
-    = fae_association f, :client
-    = fae_datepicker f,  :date
-    = fae_input f, :observations
-    = fae_pulldown f, :status, size: 'long', collection: Sell.statuses.to_a, selected: Sell.statuses[@item.status]
+        br
+              = fae_association f, :services, label: 'Serviços'
+              = fae_association f, :discount, label: 'Desconto'
+              = fae_association f, :client, label: 'Cliente'
+              = fae_datepicker f,  :date, label: 'Data'
+              = fae_input f, :observations, label: 'Observação'
+              = fae_pulldown f, :status, size: 'long', collection: Sell.statuses.to_a, selected: Sell.statuses[@item.status]

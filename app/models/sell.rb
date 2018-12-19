@@ -1,7 +1,8 @@
 class Sell < ApplicationRecord
   include Fae::BaseModelConcern
-  enum status: { finalizada: 0, cancelada: 1 }
+  enum status: { Finalizado: 0, Aberto: 1,  Cancelado: 2 }
   validates :client, presence: true
+  validates :discount, presence: false
 
   belongs_to :discount
   belongs_to :client

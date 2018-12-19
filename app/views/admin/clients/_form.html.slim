@@ -2,16 +2,16 @@
   header.content-header.js-content-header
   == render 'fae/shared/form_header', header: @klass_name
   == render 'fae/shared/errors'
-
+  tr
   main.content
     = fae_input f, :name
     = fae_input f, :email
     = fae_input f, :observations
     = fae_input f, :phone
 
-    #addresses
-      h2 My Adresses
+    #addresses.cocoon
+      h1 Endereço
       = f.simple_fields_for :addresses do |address|
         = render 'address_fields', f: address
       .links
-        = link_to_add_association 'Add Address', f, :addresses
+        = link_to_add_association 'Adicionar', f, :addresses
