@@ -6,10 +6,9 @@
     = fae_association f, :client
     = fae_association f, :product
     = fae_input f, :description
-    main.content
-      #sell_debits.cocoon
-        h2 Prazo
-        = f.simple_fields_for :sell_debits do |sell_debit|
-          = render 'sell_debit_fields', f: sell_debit
-      .links
-          = link_to_add_association 'Adicionar período', f, :sell_debits
+    #sell_debits.cocoon
+      h2 Prazo
+      = f.simple_fields_for :sell_debits do |sell_debit|
+        = render 'sell_debit_fields', f: sell_debit
+    .links
+        = link_to_add_association 'Adicionar período', f, :sell_debits
