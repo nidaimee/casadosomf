@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_18_120519) do
+ActiveRecord::Schema.define(version: 2018_12_19_120507) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,16 @@ ActiveRecord::Schema.define(version: 2018_12_18_120519) do
     t.string "phone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "debits", force: :cascade do |t|
+    t.bigint "client_id"
+    t.bigint "product_id"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["client_id"], name: "index_debits_on_client_id"
+    t.index ["product_id"], name: "index_debits_on_product_id"
   end
 
   create_table "discounts", force: :cascade do |t|
@@ -211,11 +221,25 @@ ActiveRecord::Schema.define(version: 2018_12_18_120519) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "sell_debits", force: :cascade do |t|
+    t.decimal "price"
+    t.date "date"
+    t.bigint "client_id"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "product_id"
+    t.integer "debit_id"
+    t.index ["client_id"], name: "index_sell_debits_on_client_id"
+    t.index ["product_id"], name: "index_sell_debits_on_product_id"
+  end
+
   create_table "sell_products", force: :cascade do |t|
     t.bigint "product_id"
     t.bigint "sell_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "quantity"
     t.index ["product_id"], name: "index_sell_products_on_product_id"
     t.index ["sell_id"], name: "index_sell_products_on_sell_id"
   end
@@ -252,7 +276,11 @@ ActiveRecord::Schema.define(version: 2018_12_18_120519) do
   end
 
   add_foreign_key "addresses", "clients"
+  add_foreign_key "debits", "clients"
+  add_foreign_key "debits", "products"
   add_foreign_key "product_quantities", "products"
+  add_foreign_key "sell_debits", "clients"
+  add_foreign_key "sell_debits", "products"
   add_foreign_key "sell_products", "products"
   add_foreign_key "sell_products", "sells"
   add_foreign_key "sell_services", "sells"

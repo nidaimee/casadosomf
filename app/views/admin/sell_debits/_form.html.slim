@@ -1,0 +1,15 @@
+= simple_form_for(['admin', @item]) do |f|
+  == render 'fae/shared/form_header', header: @klass_name
+
+  main.content
+  #products.cocoon
+  h1 Períodos
+  = f.simple_fields_for :sell_periods do |sell_debit|
+    = render 'address_fields', f: sell_debit
+  .links
+    = link_to_add_association 'Add Período', f, :sell_debits
+    .links
+      = link_to_add_association 'Adicione períodos', f, :sell_periods
+    = fae_association f, :client
+    = fae_association f, :product
+    = fae_input f, :description

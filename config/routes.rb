@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
   namespace :admin do
+    resources :debits
+    resources :sell_debits
     resources :discounts
     resources :sells
     resources :product_quantities

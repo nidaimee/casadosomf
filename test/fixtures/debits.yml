@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  client: one
+  product: one
+  description: MyText
+
+two:
+  client: two
+  product: two
+  description: MyText

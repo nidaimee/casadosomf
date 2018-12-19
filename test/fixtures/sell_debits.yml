@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  price: 9.99
+  date: 2018-12-19
+  client: one
+  description: MyText
+
+two:
+  price: 9.99
+  date: 2018-12-19
+  client: two
+  description: MyText

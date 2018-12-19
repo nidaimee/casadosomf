@@ -1,11 +1,21 @@
 class Sell < ApplicationRecord
   include Fae::BaseModelConcern
-  has_many :sell_services, dependent: :delete_all
-  has_many :sell_products, dependent: :delete_all
-  has_many :services, dependent: :delete_all
+  enum status: { finalizada: 0, cancelada: 1 }
+  validates :client, presence: true
+
+  belongs_to :discount
+  belongs_to :client
+
+  has_many :sell_products, dependent: :destroy
+  has_many :products, through: :sell_products
 
 
-  enum status: { Finalizado: 0, Cancelado: 1, Aberto: 2}
+  accepts_nested_attributes_for :sell_products, reject_if: :all_blank, allow_destroy: true
+
+  has_many :sell_services, dependent: :destroy
+  has_many :services, through: :sell_services
+
+  before_save :set_total
 
   def fae_display_field
     id
@@ -14,22 +24,12 @@ class Sell < ApplicationRecord
   def self.for_fae_index
     order(:id)
   end
-  belongs_to :discount
-  belongs_to :client
 
-  has_many :sell_products
-  has_many :products, through: :sell_products
-
-  has_many :sell_services
-  has_many :services, through: :sell_services
-  before_save :set_total
-
-
-    private
+  private
 
   def set_total
     total = 0
-    self.products.each {|p| total += p.price }
+    self.sell_products.each {|p| total += p.quantity * p.product.price }
     self.services.each {|s| total += s.price }
 
     if self.discount.present?

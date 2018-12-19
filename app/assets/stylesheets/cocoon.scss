@@ -1,0 +1,30 @@
+.cocoon {
+  margin: 30px 0;
+  max-width: 515px;
+  width: 100%;
+  float: left;
+
+  h1 {
+    margin-bottom: 15px;
+    white-space: pre;
+  }
+
+  .add_fields {
+    @extend .add-button !optional;
+    float: right;
+  }
+
+  .remove_fields {
+    @extend .button !optional;
+    float: right;
+  }
+
+  .links, .nested-fields{
+    float: right;
+    width: 100%;
+  }
+
+  .nested-fields {
+    margin-bottom: 15px;
+  }
+}
