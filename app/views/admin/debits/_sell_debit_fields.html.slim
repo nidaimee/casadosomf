@@ -1,4 +1,4 @@
 .nested-fields
-  = f.input :price, label: "Valor"
+  = f.input :price, prefix: '$', placeholder: '00.00', label: 'Valor'
   = f.input :date, label: "Data"
   = link_to_remove_association "Remover Período", f

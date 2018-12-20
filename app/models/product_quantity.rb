@@ -1,14 +1,24 @@
 class ProductQuantity < ApplicationRecord
   include Fae::BaseModelConcern
+  belongs_to :product
 
-  validates :quantity, presence: true
+  before_save :set_total
 
   def fae_display_field
-    quantity
+    id
   end
   def self.for_fae_index
    order(:id)
  end
 
-  belongs_to :product
+  private
+
+  def set_total
+    total = 0
+    if self.present?
+      total = self.enter - self.quantity
+    end
+  
+    self.total = total
+end
 end

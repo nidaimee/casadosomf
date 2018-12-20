@@ -7,7 +7,7 @@ module Fae
     item('Opções', subitems: [
       item('Clientes', path: admin_clients_path),
       item('Descontos', path: admin_discounts_path),
-      item('Quantidade dos Produto', path: admin_product_quantities_path),
+      item('Estoque', path: admin_product_quantities_path),
       item('Serviços', path: admin_services_path),
       item('Produtos', path: admin_products_path),
       item('Vendas', path: admin_sells_path),

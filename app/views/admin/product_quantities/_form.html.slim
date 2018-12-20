@@ -2,5 +2,6 @@
   == render 'fae/shared/form_header', header: @klass_name
 
   main.content
-    = fae_input f, :quantity, label: 'Quantidade'
+    = fae_input f, :quantity, label: 'Saída'
+    = fae_input f, :enter, label: 'Entrada'
     = fae_association f, :product, label: 'Produto'

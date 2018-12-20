@@ -4,8 +4,11 @@ main.content
   table.js-sort-column
     thead
       tr
-        th Quantidade
+        th Id
+        th Saída
+        th Entrada
         th Nome
+        th Total
         th.-action-wide Modificado
 
 
@@ -14,7 +17,10 @@ main.content
         - @items.each do |item|
           tr id=fae_sort_id(item)
             td = link_to item.fae_display_field, edit_admin_product_quantity_path(item)
+            td = item.quantity
+            td = item.enter
             td = item.product.title
+            td = item.total
             td = fae_date_format item.updated_at
 
       - else
