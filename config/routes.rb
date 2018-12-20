@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-    root :to => 'admin#main'
+    root to: "admin/products#index"
   namespace :admin do
     resources :debits
     resources :sell_debits

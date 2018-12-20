@@ -16,6 +16,6 @@ class Client < ApplicationRecord
     end
 
   def fae_display_field
-    name
+      name
   end
 end
