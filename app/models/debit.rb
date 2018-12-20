@@ -10,7 +10,7 @@ class Debit < ApplicationRecord
 
 
   def fae_display_field
-      id
+      id  
   end
 
   def self.for_fae_index

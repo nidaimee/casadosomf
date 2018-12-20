@@ -7,12 +7,13 @@ class Client < ApplicationRecord
   validates :phone, presence: true
   validates :email,
     uniqueness: true,
-    presence: true,
     format: {
       with: Fae.validation_helpers.email_regex,
-      message: 'You need use a valid and unique email'
+      message: 'Você precisa validar um único e-mail'
     }
-
+    def self.for_fae_index
+     order(:id)
+    end
 
   def fae_display_field
     name
