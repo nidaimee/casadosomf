@@ -1,13 +1,11 @@
 = simple_form_for(['admin', @item]) do |f|
-  header.content-header.js-content-header
   == render 'fae/shared/form_header', header: @klass_name
   == render 'fae/shared/errors'
   main.content
     = fae_association f, :client
     = fae_association f, :product
-    = fae_input f, :description
-    #sell_debits.cocoon
-      h2 Prazo
+    #sell_debits
+
       = f.simple_fields_for :sell_debits do |sell_debit|
         = render 'sell_debit_fields', f: sell_debit
     .links
