@@ -4,4 +4,4 @@
   main.content
     = fae_input f, :quantity, label: 'Saída'
     = fae_input f, :enter, label: 'Entrada'
-    = fae_association f, :product, label: 'Produto'
+    = fae_pulldown f, :product, size: 'short', collection: Product.order(:title), search: true

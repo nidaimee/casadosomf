@@ -6,11 +6,12 @@ class Debit < ApplicationRecord
 
   has_many :sell_debits, dependent: :destroy
 
+
   accepts_nested_attributes_for :sell_debits, reject_if: :all_blank, allow_destroy: true
 
 
   def fae_display_field
-      id
+      product.title
   end
 
   def self.for_fae_index

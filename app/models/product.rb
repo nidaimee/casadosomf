@@ -8,6 +8,7 @@ class Product < ApplicationRecord
     title
   end
   has_many :product_quantities
-  
+  has_many :products, through: :product_quantities
+
 
 end

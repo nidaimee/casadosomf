@@ -1,7 +1,7 @@
 class SellDebit < ApplicationRecord
   include Fae::BaseModelConcern
   validates :client, presence: true
-
+  belongs_to :debit
 
   def fae_display_field
     title
@@ -11,6 +11,6 @@ class SellDebit < ApplicationRecord
   end
   belongs_to :product
   belongs_to :client
-  belongs_to :sell_debit
+
 
 end

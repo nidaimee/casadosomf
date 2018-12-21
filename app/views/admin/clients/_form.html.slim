@@ -2,11 +2,11 @@
   header.content-header.js-content-header
   == render 'fae/shared/form_header', header: @klass_name
   == render 'fae/shared/errors'
-  tr
+
   main.content
     = fae_input f, :name, label: 'Nome(Cliente ou Empresa)'
     = fae_input f, :email, label: 'Email'
-    = fae_input f, :company_name, label: 'Documento', placeholder: ''
+    = fae_input f, :company_name, label: 'Documento'
     = fae_input f, :phone, label: 'Telefone'
     = fae_input f, :observations, label: 'Observação'
 

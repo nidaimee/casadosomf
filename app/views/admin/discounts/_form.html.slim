@@ -2,5 +2,5 @@
   == render 'fae/shared/form_header', header: @klass_name
 
   main.content
-    = fae_input f, :title
-    = fae_prefix f, :value, prefix: '$', placeholder: '00.00'
+    = fae_input f, :title, label: 'Título'
+    = fae_prefix f, :value, prefix: '$', placeholder: '00.00', label: 'Valor'
