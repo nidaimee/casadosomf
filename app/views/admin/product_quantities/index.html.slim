@@ -4,10 +4,9 @@ main.content
   table.js-sort-column
     thead
       tr
-        th Id
+        th Produto
         th Saída
         th Entrada
-        th Produto
         th Total
         th.-action-wide Modificado
 
@@ -19,8 +18,6 @@ main.content
             td = link_to item.fae_display_field, edit_admin_product_quantity_path(item)
             td = item.quantity
             td = item.enter
-            
-            td = item.product.title
             td = item.total
             td = fae_date_format item.updated_at
 

@@ -5,7 +5,7 @@ class ProductQuantity < ApplicationRecord
   before_save :set_total
 
   def fae_display_field
-    id
+    product.title
   end
   def self.for_fae_index
    order(:id)
@@ -18,7 +18,7 @@ class ProductQuantity < ApplicationRecord
     if self.present?
       total = self.enter - self.quantity
     end
-  
+
     self.total = total
 end
 end

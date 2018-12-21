@@ -19,7 +19,7 @@ class Sell < ApplicationRecord
   before_save :set_total
 
   def fae_display_field
-    id
+    client.name
   end
 
   def self.for_fae_index
