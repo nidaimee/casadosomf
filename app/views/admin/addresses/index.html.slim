@@ -25,7 +25,7 @@ main.content
             td = item.neighborhood
             td = item.street
             td = item.number
-            td = fae_date_format item.updated_at
+            td = fae_datetime_format item.updated_at
             td = fae_delete_button item
       - else
         tr: td colspan="3" No items found

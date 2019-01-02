@@ -23,7 +23,7 @@ header.content-header.js-content-header.-dashboard
             tr
               td: a href=edit_path = item.fae_display_field
               td: a href=index_path = item.class.to_s
-              td = fae_date_format item.updated_at
+              td = fae_datetime_format item.updated_at
           - rescue
 - else
   section.help-section

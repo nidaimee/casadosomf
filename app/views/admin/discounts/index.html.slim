@@ -15,7 +15,7 @@ main.content
           tr id=fae_sort_id(item)
             td = link_to item.fae_display_field, edit_admin_discount_path(item)
             td = item.value
-            td = fae_date_format item.updated_at
+            td = fae_datetime_format item.updated_at
 
       - else
         tr: td colspan="3" No items found

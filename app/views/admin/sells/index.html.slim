@@ -6,11 +6,10 @@ main.content
       tr
         th Cliente
         th Desconto
-        th Status
-        th Data
         th Total
+        th Data
+        th Status
         th.-action-wide Modificado
-
 
     tbody
       - if @items.present?
@@ -18,9 +17,9 @@ main.content
           tr id=fae_sort_id(item)
             td = link_to item.fae_display_field, edit_admin_sell_path(item)
             td = item.discount.title
-            td = item.status
-            td = item.date
             td = item.total
-            td = fae_date_format item.updated_at
+            td = item.date
+            td = item.status
+            td = fae_datetime_format item.updated_at
       - else
           tr: td colspan="3" No items found

@@ -7,6 +7,7 @@ main.content
         th Nome
         th Email
         th Telefone
+        th Documento
         th.-action-wide Modificado
         th.-action data-sorter="false"
 
@@ -17,7 +18,9 @@ main.content
             td = link_to item.fae_display_field, edit_admin_client_path(item)
             td = item.email
             td = item.phone
-            td = fae_date_format item.updated_at
-            td = fae_delete_button item
+            td = item.company_name
+            td = fae_datetime_format item.updated_at
+
+        
       - else
         tr: td colspan="3" No items found

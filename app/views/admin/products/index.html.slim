@@ -18,6 +18,6 @@ main.content
             td = link_to item.fae_display_field, edit_admin_product_path(item)
             td = item.price
             td = item.description
-            td = fae_date_format item.updated_at
+            td = fae_datetime_format item.updated_at
       - else
         tr: td colspan="3" No items found
