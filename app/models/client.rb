@@ -12,7 +12,7 @@ class Client < ApplicationRecord
       message: 'Você precisa validar um único e-mail'
     }
     def self.for_fae_index
-     order(:id)
+      order(created_at: :desc)
     end
 
   def fae_display_field

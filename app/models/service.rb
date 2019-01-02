@@ -6,5 +6,8 @@ class Service < ApplicationRecord
   def fae_display_field
     title
   end
+  def self.for_fae_index
+    order(created_at: :desc)
+  end
 
 end

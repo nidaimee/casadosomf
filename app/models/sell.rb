@@ -23,7 +23,7 @@ class Sell < ApplicationRecord
   end
 
   def self.for_fae_index
-    order(:id)
+    order(created_at: :desc)
   end
 
   private

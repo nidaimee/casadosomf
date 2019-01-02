@@ -12,8 +12,8 @@
         = link_to_add_association 'Adicionar produto', f, :sell_products
         br
               = fae_association f, :services, label: 'Serviços'
-              = fae_association f, :discount, label: 'Desconto'
-              = fae_association f, :client, label: 'Cliente'
+              = fae_pulldown f, :discount, size: 'short', collection: Discount.order(:title), search: true, label: "Desconto"
+              = fae_pulldown f, :client, size: 'short', collection: Client.order(:name), search: true, label: "Cliente"
               = fae_datepicker f,  :date, label: 'Data'
-              = fae_input f, :observations, label: 'Observação'
+              = fae_input f, :observations, label: 'Observação', markdown: true
               = fae_pulldown f, :status, size: 'long', collection: Sell.statuses.to_a, selected: Sell.statuses[@item.status]
