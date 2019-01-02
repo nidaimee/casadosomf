@@ -6,6 +6,8 @@ main.content
       tr
         th Cliente
         th Produto
+        th Total
+        th Descrição
         th.-action-wide Modificado
         th.-action data-sorter="false"
 
@@ -15,6 +17,8 @@ main.content
           tr id=fae_sort_id(item)
             td = link_to item.fae_display_field, edit_admin_debit_path(item)
             td = item.product.title
+            td = item.total
+            td = item.description
             td = fae_date_format item.updated_at
             td = fae_delete_button item
       - else

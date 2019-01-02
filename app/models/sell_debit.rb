@@ -4,7 +4,7 @@ class SellDebit < ApplicationRecord
   belongs_to :debit
 
   def fae_display_field
-    title
+    client.name
   end
   def self.for_fae_index
    order(:id)

@@ -6,5 +6,5 @@
   main.content
     = fae_pulldown f, :client, size: 'short', collection: Client.order(:name), search: true, label: "Cliente"
     = fae_pulldown f, :product, size: 'short', collection: Product.order(:title), search: true, label: "Produto"
-    = fae_input f, :total
+    = fae_prefix f, :total, prefix: 'R$', placeholder: '00.00', label: 'Total'
     = fae_input f, :description, label: "Descrição"

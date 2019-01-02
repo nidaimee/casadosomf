@@ -11,7 +11,7 @@ class Debit < ApplicationRecord
 
 
   def fae_display_field
-      product.title
+      client.name
   end
 
   def self.for_fae_index

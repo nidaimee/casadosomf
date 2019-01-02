@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
     root to: "admin/products#index"
-
+    resources :product do
+      post 'filter', on: :collection
+    end
   namespace :admin do
     resources :debits
     resources :sell_debits

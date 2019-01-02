@@ -1,11 +1,13 @@
-== render 'fae/shared/index_header', title: @klass_humanized.pluralize.titleize
-
+== render 'fae/shared/index_header', title: @klass_humanized.pluralize.titleize, csv: true
+  = render 'fae/shared/recent_changes'
 main.content
+
   table.js-sort-column
     thead
       tr
         th Nome do Produto
         th Preço
+        th Descrição
         th.-action-wide Modificado
 
 
@@ -15,6 +17,7 @@ main.content
           tr id=fae_sort_id(item)
             td = link_to item.fae_display_field, edit_admin_product_path(item)
             td = item.price
+            td = item.description
             td = fae_date_format item.updated_at
       - else
         tr: td colspan="3" No items found

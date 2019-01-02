@@ -45,7 +45,7 @@ Fae.setup do |config|
   # This defines how many changes per object are kept in the DB
   # via the change tracker.
   # Defaults to 15
-  config.tracker_history_length = 15
+  config.tracker_history_length = 5
 
   ## disabled_environments
   # This option will disable Fae complete when the app is running

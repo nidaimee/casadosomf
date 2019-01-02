@@ -32,7 +32,7 @@ header.main-header#js-main-header
           - if current_user.super_admin?
             li: a href=fae.option_path Opções do Sistema
           - if @option.stage_url.present?
-            li: a href=@option.stage_url target="_blank" Stage Site
+          
 
       li
         a href=fae.help_path
