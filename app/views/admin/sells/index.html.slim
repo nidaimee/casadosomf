@@ -9,8 +9,8 @@ main.content
         th Status
         th Data
         th Total
-        th.-action-wide Modified
-        th.-action data-sorter="false"
+        th.-action-wide Modificado
+
 
     tbody
       - if @items.present?
@@ -22,6 +22,5 @@ main.content
             td = item.date
             td = item.total
             td = fae_date_format item.updated_at
-
       - else
-        tr: td colspan="3" No items found
+          tr: td colspan="3" No items found

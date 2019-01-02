@@ -5,7 +5,6 @@ main.content
     thead
       tr
         th Nome do Produto
-        th Imagem
         th Preço
         th.-action-wide Modificado
 
@@ -16,8 +15,7 @@ main.content
           tr id=fae_sort_id(item)
             td = link_to item.fae_display_field, edit_admin_product_path(item)
             td = item.price
-
+            td = image_tag(item.image.asset.thumb.url)
             td = fae_date_format item.updated_at
-
       - else
         tr: td colspan="3" No items found

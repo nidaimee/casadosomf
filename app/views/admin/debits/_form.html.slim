@@ -4,6 +4,7 @@
   == render 'fae/shared/errors'
 
   main.content
-    = fae_pulldown f, :client, size: 'short', collection: Client.order(:name), search: true
-    = fae_pulldown f, :product, size: 'short', collection: Product.order(:title), search: true
-    = fae_input f, :description
+    = fae_pulldown f, :client, size: 'short', collection: Client.order(:name), search: true, label: "Cliente"
+    = fae_pulldown f, :product, size: 'short', collection: Product.order(:title), search: true, label: "Produto"
+    = fae_input f, :total
+    = fae_input f, :description, label: "Descrição"
