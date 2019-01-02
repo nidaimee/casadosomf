@@ -11,7 +11,7 @@ Fae.setup do |config|
   ## dashboard_exclusions
   # The dashboard will show all objects with recent activity.
   # To exclude any objects, add them to this array.
-  # config.dashboard_exclusions = %w( Gallery )
+  config.dashboard_exclusions = %w( Gallery )
 
   ## max_image_upload_size
   # This will set a file size limit on image uploads in MBs.
@@ -29,7 +29,7 @@ Fae.setup do |config|
   # config.languages = {
   #   en: 'English',
   #   zh: 'Chinese'
-  
+
 
   ## recreate_versions
   # Triggers `Fae::Image` to recreate Carrierwave versions after save.

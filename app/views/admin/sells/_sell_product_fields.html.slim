@@ -1,4 +1,4 @@
 .nested-fields
-= fae_pulldown f, :product, size: 'long', collection: Product.order(:title), search: true
+= fae_pulldown f, :product, label: 'Produto', size: 'long', collection: Product.order(:title), search: true
 = f.input :quantity, label: "Quantidade"
 = link_to_remove_association "Remover Produto", f
