@@ -18,6 +18,7 @@ class Sell < ApplicationRecord
 
   before_save :set_total
 
+
   def fae_display_field
     client.name
   end

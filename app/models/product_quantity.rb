@@ -8,7 +8,7 @@ class ProductQuantity < ApplicationRecord
     product.title
   end
   def self.for_fae_index
-   order(:id)
+   order(id: :desc)
  end
 
   private
@@ -20,5 +20,5 @@ class ProductQuantity < ApplicationRecord
     end
 
     self.total = total
-end
+  end
 end

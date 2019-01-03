@@ -9,7 +9,7 @@ main.content
         th Telefone
         th Documento
         th.-action-wide Modificado
-        th.-action data-sorter="false"
+
 
     tbody
       - if @items.present?
@@ -21,6 +21,6 @@ main.content
             td = item.company_name
             td = fae_datetime_format item.updated_at
 
-        
+
       - else
         tr: td colspan="3" No items found
